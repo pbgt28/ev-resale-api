@@ -91,7 +91,7 @@ if st.button("🔮 Predict Resale Value", type="primary", use_container_width=Tr
 
     with st.spinner("Connecting to model and calculating resale value..."):
         try:
-            response = requests.post(API_URL, json=payload, timeout=60)
+            response = requests.post(API_URL, json=payload, timeout=120)
             if response.status_code == 200:
                 result = response.json()
                 price = result["predicted_resale_value_USD"]
